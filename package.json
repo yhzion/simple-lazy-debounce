@@ -13,6 +13,7 @@
     "utils",
     "function"
   ],
+  "author": "youngho.jeon",
   "repository": {
     "type": "git",
     "url": "https://github.com/yhzion/simple-lazy-debounce"
