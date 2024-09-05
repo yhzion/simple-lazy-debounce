@@ -17,39 +17,27 @@ npm install simple-lazy-debounce
 ```javascript
 import { SimpleLazyDebounce } from "simple-lazy-debounce";
 
-const doSomething = SimpleLazyDebounce(
-  // your callback function
-  () => {
-    console.log("Do something!");
-  },
-  // options
-  {
-    defaultDelay: 300, // ms
-    maxDelay: 500, // ms
-    latencyIncrement: 100, // ms
-  },
-);
+const logMessage = (message, additionalInfo) => {
+  console.log(`Message: ${message}, Info: ${additionalInfo}`);
+};
 
-setTimeout(() => {
-  doSomething();
-}, 100);
+// Create a debounced function
+const debouncedLogMessage = SimpleLazyDebounce(logMessage, {
+  defaultDelay: 300, // ms
+  maxDelay: 1000, // ms
+  latencyIncrement: 200, // ms
+});
 
-setTimeout(() => {
-  doSomething();
-}, 200);
+// Call the debounced function with arguments
+debouncedLogMessage("Hello", "This is a test"); // First call
+debouncedLogMessage("Hello again", "Another test"); // Second call
 
-setTimeout(() => {
-  doSomething();
-}, 300);
-
-setTimeout(() => {
-  doSomething();
-}, 400);
-
-setTimeout(() => {
-  doSomething();
-}, 500);
-
-// Executed once at 1001 ms
-// console output: Do something!
+// The first call will be executed after 300ms,
+// and the second call will be executed 500ms after the first call
+// console output after 300ms: Message: Hello, Info: This is a test
+// console output after an additional 500ms: Message: Hello again, Info: Another test
 ```
+
+## Changelog
+
+For detailed changelog, see the CHANGELOG.md file.
