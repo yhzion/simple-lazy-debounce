@@ -15,7 +15,7 @@
   "author": "youngho.jeon",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yhzion/simple-lazy-debounce"
+    "url": "git+https://github.com/yhzion/simple-lazy-debounce.git"
   },
   "main": "dist.index.js",
   "files": [
