@@ -1,4 +1,40 @@
+
 # Changelog
+
+## [v0.0.21] - 2024-09-05
+### Added
+- Migrated the codebase to TypeScript to enhance type safety and improve code quality.
+- Updated build and test scripts to support TypeScript.
+- Generated TypeScript declaration files (`.d.ts`) for library usage.
+
+### Fixed
+- Resolved various type-related issues during the migration process to adhere to TypeScript's strict type-checking.
+
+### Objective
+- Migrate the existing JavaScript codebase to TypeScript to enhance type safety, improve code quality, and enable better development tooling.
+
+### Migration Plan
+- **Set Up TypeScript:**
+  - Install TypeScript and create a `tsconfig.json` configuration file.
+  - Configure TypeScript to target ES6 and include appropriate module resolution strategies.
+- **Incremental Migration:**
+  - Start by renaming `.js` files to `.ts`.
+  - Gradually add type annotations to the existing functions and modules.
+  - Refactor the codebase to adhere to TypeScript's strict type-checking, fixing any type-related issues that arise.
+- **Update Build and Test Scripts:**
+  - Modify existing build scripts to compile TypeScript files.
+  - Ensure that testing frameworks (e.g., Jest) are configured to work with TypeScript.
+- **Generate Type Declarations:**
+  - Ensure that TypeScript generates `.d.ts` declaration files for the library, enabling TypeScript users to benefit from type definitions.
+- **Documentation:**
+  - Update the documentation to reflect the new TypeScript setup.
+  - Provide guidance on how to contribute to the TypeScript codebase.
+
+### Expected Benefits
+- **Improved Code Quality:** TypeScript’s static type checking will help catch errors at compile time, reducing runtime errors and improving overall code reliability.
+- **Enhanced Developer Experience:** With TypeScript, developers will benefit from better tooling, including autocompletion, refactoring support, and more informative error messages.
+- **Easier Maintenance:** The type annotations will make the codebase easier to understand and maintain, especially as the project grows.
+- **Wider Adoption:** Providing type declarations will make the library more attractive to TypeScript users, potentially increasing its adoption.
 
 ## [v0.0.20] - 2024-09-05
 ### Added
