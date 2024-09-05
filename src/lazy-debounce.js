@@ -1,10 +1,3 @@
-/**
- * SimpleLazyDebounce
- *
- * @param fn callback
- * @param {defaultDelay = 300, maxDelay = 500, latencyIncrement = 100} options
- * @returns fn
- */
 export const SimpleLazyDebounce = (callback, options) => {
   let _options = options;
 
@@ -18,9 +11,9 @@ export const SimpleLazyDebounce = (callback, options) => {
 
   for (const key in _options) {
     const value = _options[key];
-    if (!Number.isInteger(value) || (Number.isInteger(value) && value < 0)) {
+    if (!Number.isInteger(value) || value < 0) {
       throw new Error(
-        `Invalid option value for key '${key}': ${value}. It must be a unsigned integer.`,
+        `Invalid option value for key '${key}': ${value}. It must be a non-negative integer.`,
       );
     }
   }
@@ -31,10 +24,10 @@ export const SimpleLazyDebounce = (callback, options) => {
 
   let computedDelay = defaultDelay;
   let lastCallTime = 0;
+  let timeoutId;
 
-  return (args) => {
+  return (...args) => {  // `...args` to capture arguments
     const now = Date.now();
-    clearTimeout(lastCallTime);
 
     if (now - lastCallTime > computedDelay) {
       computedDelay = Math.min(computedDelay + latencyIncrement, maxDelay);
@@ -42,8 +35,11 @@ export const SimpleLazyDebounce = (callback, options) => {
       computedDelay = defaultDelay;
     }
 
-    lastCallTime = setTimeout(() => {
-      callback.apply(this, args);
+    clearTimeout(timeoutId);
+
+    timeoutId = setTimeout(() => {
+      callback(...args); // Pass arguments to callback
+      lastCallTime = Date.now(); // Set lastCallTime when the callback is executed
     }, computedDelay);
   };
 };

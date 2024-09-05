@@ -1,6 +1,6 @@
 {
   "name": "simple-lazy-debounce",
-  "version": "0.0.16",
+  "version": "0.0.18",
   "type": "module",
   "license": "MIT",
   "description": "Lazy delay support debounce function",
