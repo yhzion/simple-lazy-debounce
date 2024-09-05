@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1725534887068" clover="3.2.0">
+  <project timestamp="1725534887068" name="All files">
+    <metrics statements="18" coveredstatements="17" conditionals="15" coveredconditionals="9" methods="3" coveredmethods="3" elements="36" coveredelements="29" complexity="0" loc="18" ncloc="18" packages="1" files="1" classes="1"/>
+    <file name="lazy-debounce.ts" path="/Users/youngho.jeon/datamaker/simple-lazy-debounce/src/lazy-debounce.ts">
+      <metrics statements="18" coveredstatements="17" conditionals="15" coveredconditionals="9" methods="3" coveredmethods="3"/>
+      <line num="7" count="1" type="stmt"/>
+      <line num="11" count="14" type="stmt"/>
+      <line num="18" count="14" type="stmt"/>
+      <line num="19" count="39" type="stmt"/>
+      <line num="20" count="39" type="cond" truecount="5" falsecount="0"/>
+      <line num="21" count="4" type="stmt"/>
+      <line num="27" count="10" type="stmt"/>
+      <line num="29" count="10" type="cond" truecount="1" falsecount="1"/>
+      <line num="30" count="10" type="stmt"/>
+      <line num="33" count="10" type="stmt"/>
+      <line num="34" count="11" type="stmt"/>
+      <line num="36" count="11" type="cond" truecount="1" falsecount="1"/>
+      <line num="37" count="11" type="cond" truecount="2" falsecount="2"/>
+      <line num="39" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="42" count="11" type="stmt"/>
+      <line num="44" count="11" type="stmt"/>
+      <line num="45" count="5" type="stmt"/>
+      <line num="46" count="5" type="stmt"/>
+    </file>
+  </project>
+</coverage>

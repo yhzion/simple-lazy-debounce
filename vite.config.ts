@@ -6,8 +6,7 @@ export default defineConfig({
   plugins: [eslintPlugin()],
   build: {
     lib: {
-      // eslint-disable-next-line no-undef
-      entry: resolve(__dirname, "index.js"),
+      entry: resolve(__dirname, "index.ts"), // 변경된 entry 파일 확장자
       name: "simple-lazy-debounce",
       fileName: "index",
       formats: ["es", "umd", "cjs"],

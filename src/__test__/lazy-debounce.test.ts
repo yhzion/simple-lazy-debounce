@@ -1,7 +1,8 @@
 import { SimpleLazyDebounce } from "../lazy-debounce";
+
 describe("SimpleLazyDebounce", () => {
-  let callback;
-  let debouncedFunction;
+  let callback: jest.Mock;
+  let debouncedFunction: (...args: unknown[]) => void;
 
   beforeEach(() => {
     callback = jest.fn();
@@ -53,25 +54,25 @@ describe("SimpleLazyDebounce", () => {
 
   test("should throw an error when defaultDelay is not a number", () => {
     expect(() => {
-      SimpleLazyDebounce(() => {}, { defaultDelay: "300" });
+      SimpleLazyDebounce(() => {}, { defaultDelay: "300" as unknown as number });
     }).toThrow(
-      "Invalid option value for key 'defaultDelay': 300. It must be a unsigned integer.",
+      "Invalid option value for key 'defaultDelay': 300. It must be a non-negative integer.",
     );
   });
 
   test("should throw an error when maxDelay is not a number", () => {
     expect(() => {
-      SimpleLazyDebounce(() => {}, { maxDelay: "500" });
+      SimpleLazyDebounce(() => {}, { maxDelay: "500" as unknown as number });
     }).toThrow(
-      "Invalid option value for key 'maxDelay': 500. It must be a unsigned integer.",
+      "Invalid option value for key 'maxDelay': 500. It must be a non-negative integer.",
     );
   });
 
   test("should throw an error when latencyIncrement is not a number", () => {
     expect(() => {
-      SimpleLazyDebounce(() => {}, { latencyIncrement: "100" });
+      SimpleLazyDebounce(() => {}, { latencyIncrement: "100" as unknown as number });
     }).toThrow(
-      "Invalid option value for key 'latencyIncrement': 100. It must be a unsigned integer.",
+      "Invalid option value for key 'latencyIncrement': 100. It must be a non-negative integer.",
     );
   });
 
@@ -79,7 +80,35 @@ describe("SimpleLazyDebounce", () => {
     expect(() => {
       SimpleLazyDebounce(() => {}, { latencyIncrement: -1 });
     }).toThrow(
-      "Invalid option value for key 'latencyIncrement': -1. It must be a unsigned integer.",
+      "Invalid option value for key 'latencyIncrement': -1. It must be a non-negative integer.",
     );
+  });
+
+  test("should pass arguments to the callback function", () => {
+    jest.useFakeTimers();
+    debouncedFunction("arg1", 42, { key: "value" });
+
+    jest.runAllTimers();
+
+    expect(callback).toHaveBeenCalledWith("arg1", 42, { key: "value" });
+  });
+
+  test("should handle multiple arguments correctly", () => {
+    jest.useFakeTimers();
+    debouncedFunction("firstArg", "secondArg", "thirdArg");
+
+    jest.runAllTimers();
+
+    expect(callback).toHaveBeenCalledWith("firstArg", "secondArg", "thirdArg");
+  });
+
+  test("should debounce multiple calls with arguments", () => {
+    jest.useFakeTimers();
+    debouncedFunction("initialArg");
+    debouncedFunction("updatedArg");
+
+    jest.runAllTimers();
+
+    expect(callback).toHaveBeenCalledWith("updatedArg");
   });
 });
