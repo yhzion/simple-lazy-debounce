@@ -1,6 +1,9 @@
 
 # Changelog
 
+## [v0.0.22] - 2024-09-06
+- Fixed issue #4 where the entry point misconfiguration caused the library to fail when imported.
+
 ## [v0.0.21] - 2024-09-05
 ### Added
 - Migrated the codebase to TypeScript to enhance type safety and improve code quality.
