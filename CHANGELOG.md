@@ -1,5 +1,9 @@
 
 # Changelog
+## [v0.0.23] - 2024-09-06
+### Fixed
+- Added missing TypeScript type definitions to resolve issue #5.
+- Updated `tsconfig.json` to correctly handle `index.ts` located outside the `src` folder, resolving issue #6.
 
 ## [v0.0.22] - 2024-09-06
 - Fixed issue #4 where the entry point misconfiguration caused the library to fail when imported.
