@@ -13,6 +13,7 @@
     "noImplicitAny": true,
     "isolatedModules": true,
     "declaration": true,
+    "declarationDir": "./dist",  // 타입 선언 파일이 생성될 디렉토리 설정
     "outDir": "./dist",
     "rootDir": ".",
     "jsx": "react-jsx",
