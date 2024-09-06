@@ -1,5 +1,9 @@
 
 # Changelog
+## [v0.0.24] - 2024-09-06
+- Updated Rollup configuration to correctly handle dts plugin, fixing type generation errors during build.
+-	Ensured index.d.ts is properly generated during the build process.
+
 ## [v0.0.23] - 2024-09-06
 ### Fixed
 - Added missing TypeScript type definitions to resolve issue #5.
