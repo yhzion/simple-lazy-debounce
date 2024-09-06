@@ -14,13 +14,14 @@
     "isolatedModules": true,
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "./src",
+    "rootDir": ".",
     "jsx": "react-jsx",
     "baseUrl": "./",
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "typeRoots": ["./types", "./node_modules/@types"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx", "index.ts"],  // index.ts 추가
+  "include": ["src/**/*.ts", "src/**/*.tsx", "index.ts"],
   "exclude": ["node_modules", "dist"]
 }
