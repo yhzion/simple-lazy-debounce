@@ -5,14 +5,21 @@
 -	Ensured index.d.ts is properly generated during the build process.
 
 ## [v0.0.23] - 2024-09-06
+### Deprecated
+This version contains incomplete fixes for TypeScript type definitions and build issues. Please upgrade to version v0.0.24 for a fully functional release.
+
 ### Fixed
 - Added missing TypeScript type definitions to resolve issue #5.
 - Updated `tsconfig.json` to correctly handle `index.ts` located outside the `src` folder, resolving issue #6.
 
 ## [v0.0.22] - 2024-09-06
+### Deprecated
+This version contains incomplete fixes for TypeScript type definitions and build issues. Please upgrade to version v0.0.24 for a fully functional release.
 - Fixed issue #4 where the entry point misconfiguration caused the library to fail when imported.
 
 ## [v0.0.21] - 2024-09-05
+### Deprecated
+This version contains incomplete fixes for TypeScript type definitions and build issues. Please upgrade to version v0.0.24 for a fully functional release.
 ### Added
 - Migrated the codebase to TypeScript to enhance type safety and improve code quality.
 - Updated build and test scripts to support TypeScript.
@@ -48,6 +55,8 @@
 - **Wider Adoption:** Providing type declarations will make the library more attractive to TypeScript users, potentially increasing its adoption.
 
 ## [v0.0.20] - 2024-09-05
+### Deprecated
+This version contains incomplete fixes for TypeScript type definitions and build issues. Please upgrade to version v0.0.24 for a fully functional release.
 ### Added
 - Updated `SimpleLazyDebounce` to correctly pass arguments to the callback function.
 
