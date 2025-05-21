@@ -1,5 +1,7 @@
 # Simple Lazy Debounce
 
+![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/yhzion/simple-lazy-debounce?utm_source=oss&utm_medium=github&utm_campaign=yhzion%2Fsimple-lazy-debounce&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+
 Simple Lazy Debounce is a lightweight JavaScript library that provides a simple way to debounce function calls.
 
 If a function call is made within the `defaultDelay` time, the delay is incremented by `latencyIncrement`, up to the value of `maxDelay`. For example, if there were 5 calls every 100 ms, the function would be executed once at 1001 ms.
