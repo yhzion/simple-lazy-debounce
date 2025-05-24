@@ -5,8 +5,8 @@ declare module 'simple-lazy-debounce' {
     latencyIncrement?: number;
   }
 
-  export function SimpleLazyDebounce(
-    callback: (...args: unknown[]) => void,
+  export function SimpleLazyDebounce<Args extends unknown[]>(
+    callback: (..._args: Args) => void,
     options?: DebounceOptions,
-  ): (...args: unknown[]) => void;
+  ): (..._args: Args) => void;
 }

@@ -4,10 +4,10 @@ interface DebounceOptions {
   latencyIncrement?: number;
 }
 
-export const SimpleLazyDebounce = (
-  callback: (..._args: unknown[]) => void, // 'any' 대신 'unknown'을 사용하여 타입 안정성을 강화
+export const SimpleLazyDebounce = <Args extends unknown[]>(
+  callback: (..._args: Args) => void,
   options?: DebounceOptions,
-) => {
+): ((..._args: Args) => void) => {
   const _options: DebounceOptions = {
     // 'let' 대신 'const' 사용
     defaultDelay: 300,
@@ -32,7 +32,7 @@ export const SimpleLazyDebounce = (
   let lastCallTime = 0;
   let timeoutId: ReturnType<typeof setTimeout>;
 
-  return (...args: unknown[]) => {
+  return (...args: Args) => {
     const now = Date.now();
 
     if (now - lastCallTime > computedDelay) {
