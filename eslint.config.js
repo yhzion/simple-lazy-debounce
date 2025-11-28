@@ -1,36 +1,31 @@
 import typescriptPlugin from '@typescript-eslint/eslint-plugin';
 import typescriptParser from '@typescript-eslint/parser';
-import prettierPlugin from 'eslint-plugin-prettier';
 
 export default [
   {
-    ignores: ["dist", "node_modules"],
+    ignores: ["dist", "node_modules", "coverage"],
   },
   {
-    files: ["src/**/*.js", "src/**/*.ts"],
+    files: ["src/**/*.ts", "index.ts"],
     languageOptions: {
       ecmaVersion: "latest",
       sourceType: "module",
       parser: typescriptParser,
+      parserOptions: {
+        project: "./tsconfig.json",
+      },
     },
     plugins: {
       "@typescript-eslint": typescriptPlugin,
-      "prettier": prettierPlugin,
     },
     rules: {
-      "prettier/prettier": "error",
-      "eqeqeq": "error",
-      "no-var": "error",
-      "prefer-const": "error",
-      "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
-      "no-console": "warn",
-      "curly": "error",
-      "semi": ["error", "always"],
-      // "quotes": ["error", "single"], // 이 라인을 제거합니다.
-      "@typescript-eslint/explicit-module-boundary-types": "off",
+      // TypeScript 특화 규칙만 (oxlint가 커버하지 않는 타입 기반 규칙)
       "@typescript-eslint/no-explicit-any": "warn",
-      "indent": ["error", 2],
-      "comma-dangle": ["error", "always-multiline"],
+      "@typescript-eslint/no-floating-promises": "error",
+      "@typescript-eslint/await-thenable": "error",
+      "@typescript-eslint/no-misused-promises": "error",
+
+      // 나머지 규칙은 oxlint가 담당
     },
   },
 ];

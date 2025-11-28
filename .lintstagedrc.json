@@ -1,0 +1,7 @@
+{
+  "*.ts": [
+    "oxlint -c oxlint.json",
+    "eslint",
+    "prettier --write"
+  ]
+}

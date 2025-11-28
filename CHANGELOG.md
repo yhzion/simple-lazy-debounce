@@ -1,5 +1,26 @@
-
 # Changelog
+
+## [v0.1.0] - 2025-11-28
+
+### Added
+- TypeScript generics support for callback argument type inference
+- Export `DebounceOptions` interface for TypeScript users
+- Playwright E2E tests with UMD build verification
+- GitHub Actions CI workflow (lint, test, build, e2e)
+- Pre-commit hooks with husky and lint-staged
+- oxlint as primary linter for faster linting
+- CI/CD status badges in README
+
+### Changed
+- Bundle size optimized from 0.71kB to 0.53kB (-25%)
+- Simplified error messages for smaller bundle
+- Updated GitHub Actions to v4
+- ESLint limited to TypeScript-specific rules only (oxlint handles the rest)
+
+### Removed
+- CodeRabbit badge from README
+- Deprecated `types/` directory (types now generated in `dist/`)
+
 ## [v0.0.24] - 2024-09-06
 - Updated Rollup configuration to correctly handle dts plugin, fixing type generation errors during build.
 -	Ensured index.d.ts is properly generated during the build process.

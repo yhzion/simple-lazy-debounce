@@ -57,17 +57,13 @@ describe('SimpleLazyDebounce', () => {
       SimpleLazyDebounce(() => {}, {
         defaultDelay: '300' as unknown as number,
       });
-    }).toThrow(
-      "Invalid option value for key 'defaultDelay': 300. It must be a non-negative integer.",
-    );
+    }).toThrow('Invalid option: defaultDelay');
   });
 
   test('should throw an error when maxDelay is not a number', () => {
     expect(() => {
       SimpleLazyDebounce(() => {}, { maxDelay: '500' as unknown as number });
-    }).toThrow(
-      "Invalid option value for key 'maxDelay': 500. It must be a non-negative integer.",
-    );
+    }).toThrow('Invalid option: maxDelay');
   });
 
   test('should throw an error when latencyIncrement is not a number', () => {
@@ -75,17 +71,13 @@ describe('SimpleLazyDebounce', () => {
       SimpleLazyDebounce(() => {}, {
         latencyIncrement: '100' as unknown as number,
       });
-    }).toThrow(
-      "Invalid option value for key 'latencyIncrement': 100. It must be a non-negative integer.",
-    );
+    }).toThrow('Invalid option: latencyIncrement');
   });
 
-  test('should throw an error when latencyIncrement is not a number', () => {
+  test('should throw an error when latencyIncrement is negative', () => {
     expect(() => {
       SimpleLazyDebounce(() => {}, { latencyIncrement: -1 });
-    }).toThrow(
-      "Invalid option value for key 'latencyIncrement': -1. It must be a non-negative integer.",
-    );
+    }).toThrow('Invalid option: latencyIncrement');
   });
 
   test('should pass arguments to the callback function', () => {

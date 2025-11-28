@@ -1,6 +1,8 @@
 # Simple Lazy Debounce
 
-![CodeRabbit Pull Request Reviews](https://img.shields.io/coderabbit/prs/github/yhzion/simple-lazy-debounce?utm_source=oss&utm_medium=github&utm_campaign=yhzion%2Fsimple-lazy-debounce&labelColor=171717&color=FF570A&link=https%3A%2F%2Fcoderabbit.ai&label=CodeRabbit+Reviews)
+[![CI](https://github.com/yhzion/simple-lazy-debounce/actions/workflows/ci.yml/badge.svg)](https://github.com/yhzion/simple-lazy-debounce/actions/workflows/ci.yml)
+[![npm version](https://img.shields.io/npm/v/simple-lazy-debounce.svg)](https://www.npmjs.com/package/simple-lazy-debounce)
+[![npm bundle size](https://img.shields.io/bundlephobia/minzip/simple-lazy-debounce)](https://bundlephobia.com/package/simple-lazy-debounce)
 
 Simple Lazy Debounce is a lightweight JavaScript library that provides a simple way to debounce function calls.
 
